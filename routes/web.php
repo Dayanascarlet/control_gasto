@@ -29,8 +29,5 @@ Route::get('/permisos/create','PermisosController@create')->name('permisos.creat
 Route::post('/permisos/store','PermisosController@store')->name('permisos.store');
 
 Route::get('/permisos/edit/{per_id}','PermisosController@edit')->name('permisos.edit');
-
-
-
-
-
+Route::post('permisos/update/{per_id}','permisosController@update')->name('permisos.update');
+Route::post('permisos/destroy{per_id}','permisosController@destroy')->name('permisos.destroy');

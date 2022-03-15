@@ -63,8 +63,9 @@ class PermisosController extends Controller
     public function edit($id)
     {
         //
-        $permiso=permisos::find($id);
-        dd($id);
+        $permisos=permisos::find($id);
+        return view('permisos.edit')
+       ->with('permisos',$permisos);
     }
 
     /**
@@ -76,7 +77,10 @@ class PermisosController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+      $Per=Permisos:: find($id);
+      $Per->update($request->all());
+      return redirect(route('permisos')); 
+        
     }
 
     /**
@@ -88,5 +92,7 @@ class PermisosController extends Controller
     public function destroy($id)
     {
         //
+        permisos::destroy($id);
+        return redirect(route('permisos'));
     }
 }
