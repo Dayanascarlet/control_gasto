@@ -15,7 +15,7 @@ class PermisosTable extends Migration
     {
           Schema::create('permisos', function (Blueprint $table) {
             $table->id('per_id');
-            $table->float('per_nombre');
+            $table->string('per_nombre');
            
            
         });

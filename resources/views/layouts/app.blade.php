@@ -31,10 +31,7 @@
                     <img src="https://wallo.com/media/aplicacion-control-gastos-android.png" width="30" height="30" class="d-inline-block align-top"   alt="">CONTROL DE GASTOS
                       <a class="nav-item nav-link" href="{{route('usuarios')}}">Usuarios</a>
                       <a class="nav-item nav-link" href="{{route('permisos')}}">Permisos</a>
-                      <a class="nav-item nav-link" href="#">Egresos</a>
-                      <a class="nav-item nav-link" href="#">Ingresos</a>
-                      <a class="nav-item nav-link" href="#">Tipo de Egresos</a>
-                      <a class="nav-item nav-link" href="#">Tipo de Ingresos</a>
+                      <a class="nav-item nav-link" href="#">Tipo</a>
                 @endguest
                 </a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
