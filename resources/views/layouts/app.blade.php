@@ -32,7 +32,7 @@
                       <a class="nav-item nav-link" href="{{route('usuarios')}}">Usuarios</a>
                       <a class="nav-item nav-link" href="{{route('permisos')}}">Permisos</a>
                        <a class="nav-item nav-link" href="{{route('movimientos')}}">Movimientos</a>
-                      <a class="nav-item nav-link" href="#">Tipo</a>
+                      <a class="nav-item nav-link" href="{{route('tipo')}}">Tipo</a>
                 @endguest
                 </a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
