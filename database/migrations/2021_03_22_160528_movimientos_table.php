@@ -20,6 +20,7 @@ class MovimientosTable extends Migration
             $table->float('mov_cantidad');
             $table->string('mov_detalle');
             $table->foreignId('tip_id')->references('tip_id')->on('tipo');
+            $table->foreignId('usu_id')->references('usu_id')->on('users');
         
         });
     }

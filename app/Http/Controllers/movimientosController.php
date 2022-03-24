@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Tipos;
+use App\movimientos;
+use Auth;
 
 class movimientosController extends Controller
 {
@@ -15,7 +17,8 @@ class movimientosController extends Controller
     public function index()
     {
         
-        return view('Movimientos.index');
+        return view('movimientos.index');
+        
     }
 
     /**
@@ -39,7 +42,13 @@ class movimientosController extends Controller
     public function store(Request $request)
     {
         //
-    }
+        $data=$request->all();
+        
+        $data['usu_id']=Auth::user()->usu_id;
+        movimientos::create($data);
+        return redirect(route('movimientos'));   
+
+ }
 
     /**
      * Display the specified resource.
@@ -61,6 +70,9 @@ class movimientosController extends Controller
     public function edit($id)
     {
         //
+        $movimientos=movimientos::find($id);
+        return view('movimientos.edit')
+        ->with('permisos',$permisos);
     }
 
     /**
@@ -72,7 +84,9 @@ class movimientosController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+
+        $mov=movimientos::find($id);
+        $mov->update(route('movimientos'));
     }
 
     /**
@@ -84,5 +98,7 @@ class movimientosController extends Controller
     public function destroy($id)
     {
         //
+        movimientos::destroy($id);
+        return redirect(route('movimientos'));
     }
 }

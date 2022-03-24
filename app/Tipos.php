@@ -11,6 +11,7 @@ class Tipos extends Model
     protected $table='tipo';
     protected $primaryKey='tip_id';
      protected $fillable=['tip_descripcion'];
+     
  }
 
     
