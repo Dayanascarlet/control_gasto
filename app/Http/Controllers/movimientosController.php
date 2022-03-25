@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Tipos;
+use App\User;
 use App\movimientos;
 use Auth;
 
@@ -16,8 +17,9 @@ class movimientosController extends Controller
      */
     public function index()
     {
-        
-        return view('movimientos.index');
+        $movimientos=movimientos::all();
+        return view('movimientos.index')
+        ->with('movimientos',$movimientos);
         
     }
 
@@ -28,9 +30,13 @@ class movimientosController extends Controller
      */
     public function create()
     {
+        $movimientos=movimientos::all();
         $tipos=tipos::all();
-        return view('Movimientos.create')
-        ->With('tipos',$tipos);
+        $user=User::all();
+        return view('movimientos.create')
+        ->With('tipos',$tipos)
+        ->With('User',$user);
+
     }
 
     /**

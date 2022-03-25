@@ -4,11 +4,19 @@
 
 <table class="table"> 
 <th>#</th>
-<th>Tipo</th>
-<th>concepto</th>
+
 <th>Fecha</th>
-<th>Detalle</th>
+<th>Tipo</th>
 <th>Cantidad</th>
-<th>Acciones</th>
+<th>Detalle</th>
+<!-- <th>Acciones</th> -->
+@foreach($movimientos as $m)
+	<tr>
+		<td>{{$loop->iteration}}</td>
+		<td>{{$m->mov_fecha}}</td>
+		<td>{{$m->mov_tipo}}</td>
+		<td>{{$m->mov_cantidad}}</td>
+		<td>{{$m->mov_detalle}}</td>
+		@endforeach
 </table>
 @endsection

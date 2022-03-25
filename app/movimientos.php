@@ -16,6 +16,6 @@ class movimientos extends Model
      * @var array
      */
     protected $fillable = [
-        'mov_id','mov_fecha','mov_cantidad','mov_detalle','mov_tipo'
+        'mov_id','mov_fecha','mov_cantidad','mov_detalle','mov_tipo', 'tip_id','usu_id'
     ];
 }
