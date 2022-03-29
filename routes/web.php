@@ -42,7 +42,10 @@ Route::get('/movimientos/create','movimientosController@create')->name('movimien
 Route::post('/movimientos/store','movimientosController@store')->name('movimientos.store');
 Route::get('/movimientos/edit/{mov_id}','movimientosController@edit')->name('movimientos.edit');
 Route::post('movimientos/update/{mov_id}','movimientosController@update')->name('movimientos.update');
-Route::post('movimientos/destroy{mov_id}','movimientosController@destroy')->name('movimientos.destroy');
+Route::post('movimientos/destroy/{mov_id}','movimientosController@destroy')->name('movimientos.destroy');
+
+
+Route::post('/movimientos/search','movimientosController@index')->name('movimientos.search');
 
 
 

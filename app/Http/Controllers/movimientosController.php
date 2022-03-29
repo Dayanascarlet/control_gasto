@@ -7,6 +7,7 @@ use App\Tipos;
 use App\User;
 use App\movimientos;
 use Auth;
+use DB;
 
 class movimientosController extends Controller
 {
@@ -15,11 +16,27 @@ class movimientosController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
-        $movimientos=movimientos::all();
+          $data=$request->all();
+          $desde=date('y-m-d');
+          $hasta=date('y-m-d');
+          if(isset($data['desde'])){
+
+          
+          $desde=$data['desde'];
+          $hasta=$data['hasta'];
+      }
+
+        $movimientos=DB::select("SELECT * FROM movimientos m JOIN users u ON m.usu_id=u.usu_id 
+            JOIN tipo t ON m.tip_id=t.tip_id
+            WHERE m.mov_fecha BETWEEN '$desde' AND '$hasta' 
+        
+            ");
         return view('movimientos.index')
-        ->with('movimientos',$movimientos);
+        ->with('movimientos',$movimientos)
+        ->with('desde',$desde)
+        ->with('hasta',$hasta);
         
     }
 
@@ -77,8 +94,10 @@ class movimientosController extends Controller
     {
         //
         $movimientos=movimientos::find($id);
+        $tipos=Tipos::all();
         return view('movimientos.edit')
-        ->with('permisos',$permisos);
+        ->with('movimientos',$movimientos)
+        ->with('tipos',$tipos);
     }
 
     /**
@@ -93,6 +112,7 @@ class movimientosController extends Controller
 
         $mov=movimientos::find($id);
         $mov->update(route('movimientos'));
+          return redirect(route('movimientos')); 
     }
 
     /**
@@ -107,4 +127,8 @@ class movimientosController extends Controller
         movimientos::destroy($id);
         return redirect(route('movimientos'));
     }
+
+
+
+
 }
