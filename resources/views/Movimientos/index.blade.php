@@ -5,8 +5,8 @@
 @csrf
  Desde <input type="date" name="desde" value="{{$desde}}">
  Hasta<input type="date" name="hasta" value="{{$hasta}}">
- <button class="btn btn-succes">Buscar
- </button>
+ <button class="btn btn-succes" value="btn_buscar" name="btn_buscar">Buscar</button>
+  <button class="btn btn-succes" value="btn_pdf" name="btn_pdf">PDF</button> 
 </form>
 <table class="table"> 
 <th>#</th>

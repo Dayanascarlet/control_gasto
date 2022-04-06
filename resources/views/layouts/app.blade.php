@@ -7,7 +7,7 @@
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>Control Gasto</title>
+    
 
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}" defer></script>
@@ -28,13 +28,16 @@
                 <a class="navbar-brand" href="{{ url('/') }}">
                    
                       @guest
-                <img src="https://wallo.com/media/aplicacion-control-gastos-android.png" width="30" height="30" class="d-inline-block align-top"       alt="">CONTROL DE GASTOS
+                       
+                <img src="https://www.novalconsulting.com/wp-content/uploads/2017/02/Control-de-Gastos.png" width="80" height="40" class="d-inline-block align-top"       alt=""> CONTROL DE GASTOS
                 @else
-                    <img src="https://wallo.com/media/aplicacion-control-gastos-android.png" width="30" height="30" class="d-inline-block align-top"   alt="">CONTROL DE GASTOS
+                    <img src="https://www.novalconsulting.com/wp-content/uploads/2017/02/Control-de-Gastos.png" width="60" height="40" class="d-inline-block align-top"   alt="">CONTROL DE GASTOS
+                   
                       <a class="nav-item nav-link" href="{{route('usuarios')}}">Usuarios</a>
                       <a class="nav-item nav-link" href="{{route('permisos')}}">Permisos</a>
                        <a class="nav-item nav-link" href="{{route('movimientos')}}">Movimientos</a>
                       <a class="nav-item nav-link" href="{{route('tipo')}}">Tipo</a>
+                      
                 @endguest
                 </a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
@@ -52,11 +55,11 @@
                         <!-- Authentication Links -->
                         @guest
                             <li class="nav-item">
-                                <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
+                                <a class="nav-link" href="{{ route('login') }}">{{ __('Empezar') }}</a>
                             </li>
                             @if (Route::has('register'))
                                 <li class="nav-item">
-                                    <a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a>
+                                    <a class="nav-link" href="{{ route('register') }}">{{ __('Registrar') }}</a>
                                 </li>
                             @endif
                         @else
@@ -72,14 +75,13 @@
                             <ul class="dropdown-menu">
                             <!-- The user image in the menu -->
 
-                            <li class="user-header">
-                                <center>
-                                <img src="https://e7.pngegg.com/pngimages/348/800/png-clipart-man-wearing-blue-shirt-illustration-computer-icons-avatar-user-login-avatar-blue-child-thumbnail.png" width="125px">
-                                </center>
-                            </li>
+                            <li class="user-header"> </li>
                            
                                  <center>
-                                    Bienvenido
+                                    BIENVENIDO
+                                    <center>
+                                <img src="https://c0.klipartz.com/pngpicture/123/609/gratis-png-bloquear-los-iconos-de-la-computadora-candado.png" width="125px">
+                                </center>
                                 <div class="pull-right">
                                     <a href="http://localhost/control_gasto/public/logout" onclick="event.preventDefault();
                                     document.getElementById('logout-form').submit();" class="dropdown-item">
@@ -91,15 +93,6 @@
                                 </div>
                             
                         </ul>
-
-
-
-
-
-
-
-
-
 
                                 <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
                                     <a class="dropdown-item" href="{{ route('logout') }}"

@@ -18,11 +18,11 @@ class UsuarioSeeder extends Seeder
             'usu_cedula'=>'123456789',
             'usu_apellido'=>'Dayana',
             'usu_telefono'=>'0995032284',
-            'usu_fecha_nacimiento'=>'2004/08/09',
+            
             'email'=>'admin@hotmail.com',
             'password'=>bcrypt('123456789'),
             'created_at'=>date('Y-m-d H:i'),
-            'per_id'=>1
+            
         ]);
     }
 }

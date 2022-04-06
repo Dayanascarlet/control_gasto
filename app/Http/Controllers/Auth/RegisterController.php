@@ -52,15 +52,15 @@ class RegisterController extends Controller
 
         return Validator::make($data, []);
 
-        // return Validator::make($data, [
-        //     'usu_nombre' => ['required', 'string', 'max:255'],
-        //     'usu_apellido' => ['required', 'string', 'max:255'],
-        //     'usu_cedula' => ['required', 'string', 'max:255'],
-        //     'usu_telefono' => ['required', 'string', 'max:255'],      
-        //     'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
-        //     'password' => ['required', 'string', 'min:8', 'confirmed'],
+        return Validator::make($data, [
+            'usu_nombre' => ['required', 'string', 'max:255'],
+            'usu_apellido' => ['required', 'string', 'max:255'],
+            'usu_cedula' => ['required', 'string', 'max:255'],
+            'usu_telefono' => ['required', 'string', 'max:255'],      
+            'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
+            'password' => ['required', 'string', 'min:8', 'confirmed'],
             
-        // ]);
+        ]);
     }
 
     /**
@@ -76,7 +76,8 @@ class RegisterController extends Controller
              'usu_apellido' => $data['usu_apellido'],
               'usu_cedula' => $data['usu_cedula'],
                'usu_telefono' => $data['usu_telefono'],
-                 'usu_fecha_nacimiento' => $data['usu_fecha_nacimiento'],
+               
+            
             'email' => $data['email'],
             'password' => Hash::make($data['password']),
         ]);

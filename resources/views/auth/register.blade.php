@@ -66,18 +66,7 @@
                             </div>
                         </div>
                        
-                          <div class="form-group row">
-                            <label for="usu_fecha_nacimiento" class="col-md-4 col-form-label text-md-right">{{ __('Fecha de Nacimiento') }}</label>
-
-                            <div class="col-md-6">
-                                <input id="usu_fecha_nacimiento" type="text" class="form-control @error('usu_fecha_nacimiento') is-invalid @enderror" name="usu_fecha_nacimiento" value="{{ old('usu_fechanacimiento') }}" required autocomplete="usu_fecha_nacimiento" autofocus>
-                                @error('usu_fecha_nacimiento')
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
-                                @enderror
-                            </div>
-                        </div>
+                
                            
 
                         <div class="form-group row">

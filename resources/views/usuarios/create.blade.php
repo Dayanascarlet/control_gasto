@@ -5,7 +5,7 @@
 	<form action="{{route('usuarios.store')}}" method="POST" >
 		@csrf
 		<label for="">Detalle  de Nombre</label>
-		<input type="text" name="usu_nombre" id="usu_apellido" >
+		<input type="text" name="usu_nombre" id="usu_nombre" >
 
 		<label for="">Detalle  de Apellido</label>
 		<input type="text" name="usu_apellido" id="usu_apellido" >
@@ -16,8 +16,7 @@
 		<label for="">Detalle  de Telefono</label>
 		<input type="text" name="usu_telefono" id="usu_telefono" >
 
-		<label for="">Detalle  de Fecha</label>
- 		<input type="text" name="usu_fecha_nacimiento" id="usu_fecha_nacimiento" >
+	
 
  		<label for="">Detalle  de Email</label>
  		<input type="text" name="email" id="email" >

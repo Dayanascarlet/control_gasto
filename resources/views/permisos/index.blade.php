@@ -18,7 +18,7 @@
 			</svg>
 			</a>
 
-			<a href=""class="btn btn-danger">
+			<i class="bi bi-trash2"></i>
 		    <form action="{{route('permisos.destroy',$prm->per_id)}}"method="post"onsubmit="return confirm('¿Desea eliminar?')">
 		    	@csrf
 		    	<button >Eliminar </button>

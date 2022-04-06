@@ -8,6 +8,7 @@ use App\User;
 use App\movimientos;
 use Auth;
 use DB;
+use PDF;
 
 class movimientosController extends Controller
 {
@@ -18,12 +19,13 @@ class movimientosController extends Controller
      */
     public function index(Request $request)
     {
+
+        
+
           $data=$request->all();
           $desde=date('y-m-d');
           $hasta=date('y-m-d');
           if(isset($data['desde'])){
-
-          
           $desde=$data['desde'];
           $hasta=$data['hasta'];
       }
@@ -33,6 +35,13 @@ class movimientosController extends Controller
             WHERE m.mov_fecha BETWEEN '$desde' AND '$hasta' 
         
             ");
+        //BOTON DEL PDF
+        if (isset($data['btn_pdf'])) {
+            $data=['movimientos'=>$movimientos];
+            $pdf= PDF::loadView('movimientos.reporte',$data);
+            return$pdf->stream('reporte.pdf');
+            
+        }
         return view('movimientos.index')
         ->with('movimientos',$movimientos)
         ->with('desde',$desde)
@@ -95,6 +104,7 @@ class movimientosController extends Controller
         //
         $movimientos=movimientos::find($id);
         $tipos=Tipos::all();
+    
         return view('movimientos.edit')
         ->with('movimientos',$movimientos)
         ->with('tipos',$tipos);
@@ -111,7 +121,7 @@ class movimientosController extends Controller
     {
 
         $mov=movimientos::find($id);
-        $mov->update(route('movimientos'));
+        $mov->update($request->all());
           return redirect(route('movimientos')); 
     }
 

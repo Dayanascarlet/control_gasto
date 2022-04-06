@@ -15,14 +15,14 @@ class UsuarioTable extends Migration
     {
         Schema::create('users', function (Blueprint $table) {
             $table->id('usu_id');
-            $table->foreignId('per_id')->references('per_id')->on('permisos');
+            
             
             $table->string('usu_nombre');
             $table->string('usu_apellido');
             $table->string('usu_cedula');
             $table->string('usu_telefono');
             // $table->string('usu_estado')->default(1);
-            $table->date('usu_fecha_nacimiento');
+
             $table->string('email')->unique();
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
